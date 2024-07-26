@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <!-- Don't use this in production: -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="app-javascript">
+    <p>Total: <span id="total"></span></p>
+    <p>Preço: R$ <span id="preco"></span></p>
+    <button id="button">Comprar</button>
+  </div>
+
+  <script type="application/javascript">
+    const button = document.getElementById('button');
+    const total = document.getElementById('total');
+    const preco = document.getElementById('preco');
+
+    let contador = 1;
+
+    function atualizarValores(contador) {
+      total.innerText = contador;
+      preco.innerText = contador * 250;
+    }
+    atualizarValores(contador);
+
+    function handleClick() {
+      contador += 1;
+      atualizarValores(contador);
+    }
+
+    button.addEventListener('click', handleClick);
+  </script>
+</body>
+
+</html>
